@@ -30,6 +30,8 @@ namespace PatternKursProject.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
@@ -40,14 +42,40 @@ namespace PatternKursProject.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkedListBox2);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.checkedListBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboBoxType);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 275);
+            this.panel1.Size = new System.Drawing.Size(285, 275);
             this.panel1.TabIndex = 3;
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.CheckOnClick = true;
+            this.checkedListBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Газоанализатор",
+            "Водоанализатор",
+            "Почвоанализатор"});
+            this.checkedListBox2.Location = new System.Drawing.Point(0, 181);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(285, 106);
+            this.checkedListBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Location = new System.Drawing.Point(0, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Анализаторы";
             // 
             // checkedListBox1
             // 
@@ -57,10 +85,12 @@ namespace PatternKursProject.Forms
             this.checkedListBox1.Items.AddRange(new object[] {
             "Термометр",
             "Барометр",
-            "Психрометр"});
+            "Психрометр",
+            "Анемометр",
+            "Дифманометр"});
             this.checkedListBox1.Location = new System.Drawing.Point(0, 58);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(270, 89);
+            this.checkedListBox1.Size = new System.Drawing.Size(285, 106);
             this.checkedListBox1.TabIndex = 3;
             // 
             // label2
@@ -85,7 +115,7 @@ namespace PatternKursProject.Forms
             "SOIL"});
             this.comboBoxType.Location = new System.Drawing.Point(0, 17);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(270, 24);
+            this.comboBoxType.Size = new System.Drawing.Size(285, 24);
             this.comboBoxType.TabIndex = 0;
             // 
             // label1
@@ -131,5 +161,7 @@ namespace PatternKursProject.Forms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
     }
 }

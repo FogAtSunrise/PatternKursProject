@@ -19,7 +19,7 @@ namespace PatternKursProject
     /// <summary>
     /// класс системы анализа, установленной на источнике
     /// </summary>
-    public class AnalysisSystem
+    public class AnalysisSystem: AnalysisSystemMethod
     {
         /// <summary>
         /// учетный номер системы
@@ -69,9 +69,12 @@ namespace PatternKursProject
         public List<Measurement> getMeasurements()
              {
             listLastMeasur = new List<Measurement>();
+            
             if (listDevices.Count != 0)
             { foreach (var device in listDevices)
-                    listLastMeasur.Add(device.getMeasurement());
+                    foreach (var read in device.getMeasurement())
+                    listLastMeasur.Add(read);
+
             }
             return listLastMeasur;
         }
@@ -82,5 +85,7 @@ namespace PatternKursProject
         public List<Measurement> getLastMeasurements() {
                 return listLastMeasur;
         }
+
+        public List<MeasuringDevice> getLastDev() { return listDevices; }
     }
 }

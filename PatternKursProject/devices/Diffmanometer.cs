@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PatternKursProject.devices
 {
-    class Thermometer : MeasuringDevice
+    class Diffmanometer : MeasuringDevice
     {
         /// <summary>
         /// наименование устройства
         /// </summary>
-        private static string name = "Термометр";
+        private static string name = "Расходомер";
         public string getName() { return name; }
         /// <summary>
         /// норма измерения
@@ -29,7 +29,7 @@ namespace PatternKursProject.devices
         /// конструктор
         /// </summary>
         /// <param name="n"></param>
-        public Thermometer(double n)
+        public Diffmanometer(double n)
         {
             norma = n;
         }
@@ -39,7 +39,7 @@ namespace PatternKursProject.devices
         /// <param name="n"></param>
         /// <returns></returns>
         private double getDev(double n)
-        {  return Math.Abs(norma - n);   }
+        { return Math.Abs(norma - n); }
         /// <summary>
         /// получить измерение
         /// </summary>
@@ -47,7 +47,7 @@ namespace PatternKursProject.devices
         public List<Measurement> getMeasurement()
         {
             mean = testEnvironment.getMean(name);
-            return new List<Measurement> { new Measurement("Температура", mean, "°С", getDev(mean)) };
+            return new List<Measurement> { new Measurement("Объемный расход ", mean, "м3/с", getDev(mean)) };
 
         }
     }

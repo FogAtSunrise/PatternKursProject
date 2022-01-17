@@ -32,9 +32,38 @@ namespace PatternKursProject.devices
                         mean = 0.0 + rnd.NextDouble() * (100.0);
                         break;
                     }
+                case "Анемометр":
+                    {
+                        mean = 0.1 + rnd.NextDouble() * (10.5);
+                        break;
+                    }
+                case "Дифманометр":
+                    {
+                        mean = 0.1 + rnd.NextDouble() * (10.5);
+                        break;
+                    }
             }
             return mean;
 
+        }
+
+        public static double getAirAnalis()
+        {
+            double mean = 0;
+            mean = 0.0 + rnd.NextDouble() * (0.01);
+            return mean;  
+            }
+        public static double getWaterAnalis()
+        {
+            double mean = 0;
+            mean = 0.0 + rnd.NextDouble() * (0.5);
+            return mean;
+        }
+        public static double getSoilAnalis()
+        {
+            double mean = 0;
+            mean = 0.0 + rnd.NextDouble() * (300.0);
+            return mean;
         }
     }
 }

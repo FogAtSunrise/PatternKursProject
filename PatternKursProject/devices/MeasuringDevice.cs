@@ -13,6 +13,6 @@ namespace PatternKursProject.devices
     {
         string getName();
         double getNorma();
-        Measurement getMeasurement();
+        List<Measurement> getMeasurement();
     }
 }

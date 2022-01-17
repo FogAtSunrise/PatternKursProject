@@ -94,12 +94,7 @@ namespace PatternKursProject
             btnCloseChildForm_Click(sender, e);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Thermometer t = new Thermometer(20);
-            Measurement r = t.getMeasurement();
-            MessageBox.Show(r.nameMeasurement+" "+r.meanMeasurement+" "+r.unitMeasurement+" отклонение от нормы: "+r.deviationMeasurement);
-        }
+    
 
         private void dataGridViewSA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

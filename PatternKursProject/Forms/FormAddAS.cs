@@ -1,4 +1,5 @@
 ﻿using PatternKursProject.devices;
+using PatternKursProject.sampleAnalyzer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,24 +36,29 @@ namespace PatternKursProject.Forms
                 case "SOIL": t = SourceType.SOIL; break;
                 default: MessageBox.Show("Не указан тип системы"); return; 
             }
-            AnalysisSystem newSys = new AnalysisSystem(centreMonitor.getCountAS(), t);
+            AnalysisSystemMethod newSys = new AnalysisSystem(centreMonitor.getCountAS(), t);
 
             if (checkedListBox1.GetItemChecked(0))
-            {
                 newSys.addDevice(new Thermometer(20));
-               
-            }
 
             if (checkedListBox1.GetItemChecked(1))
-            {
                 newSys.addDevice(new Barometer(760));
    
-            }
             if (checkedListBox1.GetItemChecked(2))
-            {
                 newSys.addDevice(new Psychrometer(40));
 
-            }
+            if (checkedListBox1.GetItemChecked(3))
+                newSys.addDevice(new Anemometer(1.5));
+
+            if (checkedListBox1.GetItemChecked(4))
+                newSys.addDevice(new Diffmanometer(3.5));
+            if (checkedListBox2.GetItemChecked(0))
+                newSys.addDevice(new Adapter(new AirSampleAnalysis()));
+            if (checkedListBox2.GetItemChecked(1))
+                newSys.addDevice(new Adapter(new WaterSampleAnalysis()));
+            if (checkedListBox2.GetItemChecked(2))
+                newSys.addDevice(new Adapter(new SoilSampleAnalysis()));
+
             centreMonitor.addAnalysisSystem(newSys);
         }
     }

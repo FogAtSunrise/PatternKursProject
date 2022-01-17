@@ -44,10 +44,10 @@ namespace PatternKursProject.devices
         /// получить измерение
         /// </summary>
         /// <returns></returns>
-        public Measurement getMeasurement()
+        public List<Measurement> getMeasurement()
         {
             mean = testEnvironment.getMean(name);
-            return new Measurement("Давление", mean, "мм рт.ст.", getDev(mean));
+            return new List<Measurement> { new Measurement("Давление", mean, "мм рт.ст.", getDev(mean)) };
 
         }
     }

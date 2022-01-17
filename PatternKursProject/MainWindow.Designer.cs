@@ -30,7 +30,6 @@ namespace PatternKursProject
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonAddAS = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -39,12 +38,12 @@ namespace PatternKursProject
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelWorkZone = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewSA = new System.Windows.Forms.DataGridView();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.open = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,25 +54,14 @@ namespace PatternKursProject
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.buttonAddAS);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 527);
+            this.panelMenu.Size = new System.Drawing.Size(200, 561);
             this.panelMenu.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(38, 221);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 34);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonAddAS
             // 
@@ -132,7 +120,7 @@ namespace PatternKursProject
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(815, 66);
+            this.panel1.Size = new System.Drawing.Size(916, 66);
             this.panel1.TabIndex = 1;
             // 
             // btnCloseChildForm
@@ -166,8 +154,27 @@ namespace PatternKursProject
             this.panelWorkZone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkZone.Location = new System.Drawing.Point(200, 66);
             this.panelWorkZone.Name = "panelWorkZone";
-            this.panelWorkZone.Size = new System.Drawing.Size(815, 461);
+            this.panelWorkZone.Size = new System.Drawing.Size(916, 495);
             this.panelWorkZone.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(537, 399);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Добавить систему";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(390, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(224, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Системы анализа на источниках";
             // 
             // dataGridViewSA
             // 
@@ -211,30 +218,11 @@ namespace PatternKursProject
             this.open.Text = "Открыть";
             this.open.ToolTipText = "Открыть";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(390, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(224, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Системы анализа на источниках";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(537, 399);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Добавить систему";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 527);
+            this.ClientSize = new System.Drawing.Size(1116, 561);
             this.Controls.Add(this.panelWorkZone);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -263,7 +251,6 @@ namespace PatternKursProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCloseChildForm;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridViewSA;
         private System.Windows.Forms.DataGridViewTextBoxColumn num;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
