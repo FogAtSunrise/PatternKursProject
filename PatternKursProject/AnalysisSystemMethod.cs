@@ -15,7 +15,7 @@ namespace PatternKursProject
         void addDevice(MeasuringDevice dev);
         List<Measurement> getMeasurements();
         List<Measurement> getLastMeasurements();
-        List<MeasuringDevice> getLastDev();
+        List<MeasuringDevice> getListDev();
        void delDev(int t);
     }
 }

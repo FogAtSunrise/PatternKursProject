@@ -9,9 +9,9 @@ namespace PatternKursProject.commandPatt
     class CommandAddSystem : Command
     {
         private AnalysisSystemMethod syst;
-       private MonitoringSystem centre;
         public int execute()
-        { centre = MonitoringSystem.getInstance();
+        {
+            MonitoringSystem centre = MonitoringSystem.getInstance();
             centre.addAnalysisSystem(syst);
             return syst.getAccountNumber();
         }

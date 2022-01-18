@@ -11,8 +11,7 @@ namespace PatternKursProject.commandPatt
     class CommandAddDevice:Command
     {
         private AnalysisSystemMethod syst;
-        private MonitoringSystem centre;
-        List<MeasuringDevice> list;
+        private List<MeasuringDevice> list;
         public int execute()
         {
             if (list != null)
@@ -25,7 +24,7 @@ namespace PatternKursProject.commandPatt
         }
         public CommandAddDevice(List<MeasuringDevice> a, int n)
         {
-            centre = MonitoringSystem.getInstance();
+            MonitoringSystem centre = MonitoringSystem.getInstance();
             list = a;
             syst = centre.listAnalysisSystem[n];
         }

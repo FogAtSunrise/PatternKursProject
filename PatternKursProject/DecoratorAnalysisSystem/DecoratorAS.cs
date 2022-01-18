@@ -25,7 +25,7 @@ namespace PatternKursProject.DecoratorAnalysisSystem
         public void addDevice(MeasuringDevice dev) { thisSystem.addDevice(dev); }
         public List<Measurement> getMeasurements() { return thisSystem.getMeasurements(); }
         public List<Measurement> getLastMeasurements() { return thisSystem.getLastMeasurements(); }
-        public List<MeasuringDevice> getLastDev() { return thisSystem.getLastDev(); }
+        public List<MeasuringDevice> getListDev() { return thisSystem.getListDev(); }
         public void delDev(int t)
         {
             thisSystem.delDev(t);

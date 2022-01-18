@@ -88,7 +88,7 @@ namespace PatternKursProject
                 return listLastMeasur;
         }
 
-        public List<MeasuringDevice> getLastDev() { return listDevices; }
+        public List<MeasuringDevice> getListDev() { return listDevices; }
 
         public void delDev(int t)
         {

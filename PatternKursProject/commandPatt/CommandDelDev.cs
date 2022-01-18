@@ -9,7 +9,6 @@ namespace PatternKursProject.commandPatt
     class CommandDelDev : Command
     {
         private AnalysisSystemMethod syst;
-        private MonitoringSystem centre;
         private int delDev = 0;
 
         public int execute()
@@ -20,7 +19,7 @@ namespace PatternKursProject.commandPatt
         }
         public CommandDelDev(int n, int del)
         {
-            centre = MonitoringSystem.getInstance();
+            MonitoringSystem centre = MonitoringSystem.getInstance();
             syst = centre.listAnalysisSystem[n];
             delDev=del;
         }

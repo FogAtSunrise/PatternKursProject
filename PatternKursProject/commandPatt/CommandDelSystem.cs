@@ -9,17 +9,16 @@ namespace PatternKursProject.commandPatt
     class CommandDelSystem : Command
     {
 
-        private MonitoringSystem centre;
         private int del=0;
         public int execute()
-        {
+        {MonitoringSystem centre = MonitoringSystem.getInstance();
             centre.delAnalysisSystem(del);
             return del;
 
         }
         public CommandDelSystem(int n)
         {
-            centre = MonitoringSystem.getInstance();
+            
             del = n;
         }
     }

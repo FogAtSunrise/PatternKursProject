@@ -52,7 +52,7 @@ namespace PatternKursProject
             state = new OffState();
         }
         /// <summary>
-        /// количество систем анализа
+        /// для вычисления номера очередной системы
         /// </summary>
         private int countAS;
         public int getCountAS() {
