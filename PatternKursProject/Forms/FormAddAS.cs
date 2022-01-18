@@ -1,5 +1,7 @@
-﻿using PatternKursProject.devices;
+﻿using PatternKursProject.commandPatt;
+using PatternKursProject.devices;
 using PatternKursProject.sampleAnalyzer;
+using PatternKursProject.status;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +12,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PatternKursProject.Forms
 {
     public partial class FormAddAS : Form
     {
         private MonitoringSystem centreMonitor;
-
-        public FormAddAS(MonitoringSystem c)
+        MainWindow form;
+        public FormAddAS(MonitoringSystem c, MainWindow f)
         {
             InitializeComponent();
             centreMonitor = c;
+            form = f;
         }
         /// <summary>
         /// создаю систему анализа
@@ -59,7 +63,16 @@ namespace PatternKursProject.Forms
             if (checkedListBox2.GetItemChecked(2))
                 newSys.addDevice(new Adapter(new SoilSampleAnalysis()));
 
-            centreMonitor.addAnalysisSystem(newSys);
+            centreMonitor.setCommand(new CommandAddSystem(newSys));
+            centreMonitor.executeCommand();
+            if (centreMonitor.getState() == "Ожидает")
+            {
+                State s = centreMonitor.changeState();
+                if (form.timer1.Enabled==false && s.getName() == "Работает")
+                    form.timer1.Start();
+            }
+            form.button1_Click(sender, e);
         }
     }
 }
+

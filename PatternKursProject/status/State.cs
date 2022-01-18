@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PatternKursProject.commandPatt
+namespace PatternKursProject.status
 {
-    public interface Command
+    public interface State
     {
-        int execute();
+        void make();
+        string getName();
     }
 }

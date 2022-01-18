@@ -46,19 +46,30 @@ namespace PatternKursProject.devices
             return mean;
 
         }
-
+        /// <summary>
+        /// генератор значений газоанализатора
+        /// </summary>
+        /// <returns></returns>
         public static double getAirAnalis()
         {
             double mean = 0;
             mean = 0.0 + rnd.NextDouble() * (0.01);
             return mean;  
             }
+        /// <summary>
+        /// генератор значений водоанализатора
+        /// </summary>
+        /// <returns></returns>
         public static double getWaterAnalis()
         {
             double mean = 0;
             mean = 0.0 + rnd.NextDouble() * (0.5);
             return mean;
         }
+        /// <summary>
+        /// генератор значений почвоанализатора
+        /// </summary>
+        /// <returns></returns>
         public static double getSoilAnalis()
         {
             double mean = 0;

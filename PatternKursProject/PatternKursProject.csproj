@@ -256,7 +256,9 @@
     <Compile Include="AnalysisSystem.cs" />
     <Compile Include="AnalysisSystemMethod.cs" />
     <Compile Include="commandPatt\Command.cs" />
+    <Compile Include="commandPatt\CommandAddDevice.cs" />
     <Compile Include="commandPatt\CommandAddSystem.cs" />
+    <Compile Include="commandPatt\CommandDelSystem.cs" />
     <Compile Include="DecoratorAnalysisSystem\AnalysisSystemWithReport.cs" />
     <Compile Include="DecoratorAnalysisSystem\DecoratorAS.cs" />
     <Compile Include="DecoratorAnalysisSystem\exelHelper.cs" />
@@ -279,6 +281,12 @@
     <Compile Include="Forms\FormAddAS.Designer.cs">
       <DependentUpon>FormAddAS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddDevice.Designer.cs">
+      <DependentUpon>FormAddDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,11 +302,18 @@
     <Compile Include="sampleAnalyzer\SampleAnalysisSystem.cs" />
     <Compile Include="sampleAnalyzer\SoilSampleAnalysis.cs" />
     <Compile Include="sampleAnalyzer\WaterSampleAnalysis.cs" />
+    <Compile Include="status\OffState.cs" />
+    <Compile Include="status\OnStateWithoutTime.cs" />
+    <Compile Include="status\OnStateWithTime.cs" />
+    <Compile Include="status\State.cs" />
     <EmbeddedResource Include="Forms\AnalisSystemForm.resx">
       <DependentUpon>AnalisSystemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddAS.resx">
       <DependentUpon>FormAddAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddDevice.resx">
+      <DependentUpon>FormAddDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

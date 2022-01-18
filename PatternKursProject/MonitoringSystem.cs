@@ -1,4 +1,7 @@
-﻿using PatternKursProject.DecoratorAnalysisSystem;
+﻿
+using PatternKursProject.commandPatt;
+using PatternKursProject.DecoratorAnalysisSystem;
+using PatternKursProject.status;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +13,25 @@ namespace PatternKursProject
 {
     public class MonitoringSystem
     {
+
+        private State state;
+        public void setState(State s)
+        { state = s; }
+        public string getState()
+        { return state.getName(); }
+        public State changeState()
+        {
+            state.make();
+            return state;
+        }
+        /// <summary>
+        /// команды
+        /// </summary>
+        private Command command;
+        public void setCommand(Command c)
+        { command = c; }
+        public void executeCommand()
+        { command.execute(); }
         /// <summary>
         /// объект системы (для Singleton)
         /// </summary>
@@ -18,8 +40,10 @@ namespace PatternKursProject
         /// <summary>
         /// приватный конструктор
         /// </summary>
-        private MonitoringSystem() { listAnalysisSystem = new List<AnalysisSystemMethod>();
+        private MonitoringSystem() { 
+            listAnalysisSystem = new List<AnalysisSystemMethod>();
             countAS = 0;
+            state = new OffState();
         }
         /// <summary>
         /// количество систем анализа
@@ -35,7 +59,7 @@ namespace PatternKursProject
         {
             if (instance == null)
                 instance = new MonitoringSystem();
-            else MessageBox.Show("Попытка создать новый центр управления отклонена.");
+           // else MessageBox.Show("Попытка создать новый центр управления отклонена.");
             return instance;
         }
         /// <summary>
@@ -48,13 +72,23 @@ namespace PatternKursProject
           MessageBox.Show("Система №"+ countAS + " успешно создана");
           
         }
+        public void delAnalysisSystem(int t)
+        {
+            int h = listAnalysisSystem[t].getAccountNumber();
+            listAnalysisSystem.RemoveAt(t);
+          //  MessageBox.Show("Система №" + h + " успешно удалена");
+
+        }
         public void getMeasurement()
         {
-            foreach (var syst in listAnalysisSystem)
+            if (listAnalysisSystem.Count > 0)
             {
-                syst.getMeasurements();
-                AnalysisSystemWithReport f = new AnalysisSystemWithReport(syst);
-                f.writeInReport();
+                foreach (var syst in listAnalysisSystem)
+                {
+                    syst.getMeasurements();
+                    AnalysisSystemWithReport f = new AnalysisSystemWithReport(syst);
+                    f.writeInReport();
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using PatternKursProject.devices;
+﻿using PatternKursProject.commandPatt;
+using PatternKursProject.devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,11 @@ namespace PatternKursProject.Forms
     {
         private MonitoringSystem centreMonitor;
         private AnalysisSystemMethod activeSystem;
-        public AnalisSystemForm(MonitoringSystem c, AnalysisSystemMethod s)
+        public AnalisSystemForm(MonitoringSystem c, int s)
         {
             InitializeComponent();
             centreMonitor = c;
-            activeSystem = s;
+            activeSystem = centreMonitor.listAnalysisSystem[s];
             writeTable1();
             writeTable2();
         }
@@ -46,6 +47,7 @@ namespace PatternKursProject.Forms
                        dataGridView1.Rows[i].Cells[1].Value = str; 
                 }
                     else dataGridView1.Rows[i].Cells[1].Value = list[i].getNorma();
+                    dataGridView1.Rows[i].Cells[2].Value = "Удалить";
                 }
             }
         }
@@ -72,6 +74,25 @@ namespace PatternKursProject.Forms
                     dataGridViewM.Rows[i].Cells[3].Value = list[i].deviationMeasurement;
 
                 }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (dataGridView1.Columns[e.ColumnIndex].Name)
+            {
+                
+                case "del":
+                    {
+
+                        centreMonitor.setCommand(new CommandDelSystem(e.RowIndex));
+                        centreMonitor.executeCommand();
+
+                        writeTable2();
+
+                        break;
+                    }
+
             }
         }
     }

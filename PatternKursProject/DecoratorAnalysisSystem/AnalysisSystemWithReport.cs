@@ -24,7 +24,7 @@ namespace PatternKursProject.DecoratorAnalysisSystem
             {
                 using (dock = new exelHelper())
                 {
-                    if (dock.Open(filePath: Path.Combine(Environment.CurrentDirectory, "Report/Источник" + thisSystem.getAccountNumber()+ ".xlsx")))
+                    if (dock.Open(filePath: Path.Combine(Environment.CurrentDirectory, "Report/Система Анализа №" + thisSystem.getAccountNumber()+"_"+ DateTime.Now.Year.ToString() + ".xlsx")))
                     {
                          dock.Set(thisSystem.getLastMeasurements());
                         dock.Save();

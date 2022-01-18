@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Windows.Forms;
 
 namespace PatternKursProject.DecoratorAnalysisSystem
 {/// <summary>
@@ -47,7 +48,7 @@ namespace PatternKursProject.DecoratorAnalysisSystem
             return false;
         }
 
-     
+        
         internal void Save()
         {
             if (!string.IsNullOrEmpty(_filePath))

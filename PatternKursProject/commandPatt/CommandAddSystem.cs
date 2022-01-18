@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace PatternKursProject.commandPatt
 {
-    class CommandAddSystem
+    class CommandAddSystem : Command
     {
-       public AnalysisSystemMethod execute(SourceType t, MonitoringSystem s)
-        { return new AnalysisSystem(s.getCountAS(), t); }
+        private AnalysisSystemMethod syst;
+       private MonitoringSystem centre;
+        public int execute()
+        { centre = MonitoringSystem.getInstance();
+            centre.addAnalysisSystem(syst);
+            return syst.getAccountNumber();
+        }
+        public CommandAddSystem(AnalysisSystemMethod a)
+        {
+            syst = a;
+        }
     }
 }

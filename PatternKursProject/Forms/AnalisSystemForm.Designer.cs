@@ -32,6 +32,7 @@ namespace PatternKursProject.Forms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.del = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewM = new System.Windows.Forms.DataGridView();
@@ -51,8 +52,9 @@ namespace PatternKursProject.Forms
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridView1.Location = new System.Drawing.Point(482, 12);
+            this.dataGridViewTextBoxColumn2,
+            this.del});
+            this.dataGridView1.Location = new System.Drawing.Point(466, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -60,6 +62,7 @@ namespace PatternKursProject.Forms
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(291, 181);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -74,6 +77,13 @@ namespace PatternKursProject.Forms
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // del
+            // 
+            this.del.HeaderText = "Удалить";
+            this.del.MinimumWidth = 6;
+            this.del.Name = "del";
+            this.del.ReadOnly = true;
             // 
             // label1
             // 
@@ -175,5 +185,6 @@ namespace PatternKursProject.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn mean;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dev;
+        private System.Windows.Forms.DataGridViewButtonColumn del;
     }
 }
