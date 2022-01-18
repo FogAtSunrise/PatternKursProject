@@ -258,6 +258,7 @@
     <Compile Include="commandPatt\Command.cs" />
     <Compile Include="commandPatt\CommandAddDevice.cs" />
     <Compile Include="commandPatt\CommandAddSystem.cs" />
+    <Compile Include="commandPatt\CommandDelDev.cs" />
     <Compile Include="commandPatt\CommandDelSystem.cs" />
     <Compile Include="DecoratorAnalysisSystem\AnalysisSystemWithReport.cs" />
     <Compile Include="DecoratorAnalysisSystem\DecoratorAS.cs" />

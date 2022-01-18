@@ -89,5 +89,12 @@ namespace PatternKursProject
         }
 
         public List<MeasuringDevice> getLastDev() { return listDevices; }
+
+        public void delDev(int t)
+        {
+            listDevices.RemoveAt(t);
+            //  MessageBox.Show("Система №" + h + " успешно удалена");
+
+        }
     }
 }

@@ -15,12 +15,14 @@ namespace PatternKursProject.Forms
     public partial class AnalisSystemForm : Form
     {
         private MonitoringSystem centreMonitor;
-        private AnalysisSystemMethod activeSystem;
+        private int ind;
         public AnalisSystemForm(MonitoringSystem c, int s)
         {
             InitializeComponent();
             centreMonitor = c;
-            activeSystem = centreMonitor.listAnalysisSystem[s];
+            ind = s;
+           // activeSystem = centreMonitor.listAnalysisSystem[ind=s];
+            label3.Text = "СИСТЕМА АНАЛИЗА №"+ centreMonitor.listAnalysisSystem[ind].getAccountNumber();
             writeTable1();
             writeTable2();
         }
@@ -31,7 +33,7 @@ namespace PatternKursProject.Forms
         private void writeTable1()
         {
             dataGridView1.Rows.Clear();
-            List<MeasuringDevice> list = activeSystem.getLastDev();
+            List<MeasuringDevice> list = centreMonitor.listAnalysisSystem[ind].getLastDev();
             if (list.Count > 0)
             {
                 int count = list.Count;
@@ -58,9 +60,9 @@ namespace PatternKursProject.Forms
         /// </summary>
         private void writeTable2()
         {
-            List<Measurement> list = activeSystem.getLastMeasurements();
+            List<Measurement> list = centreMonitor.listAnalysisSystem[ind].getLastMeasurements();
             if (list == null)
-                list=activeSystem.getMeasurements();
+                list= centreMonitor.listAnalysisSystem[ind].getMeasurements();
             dataGridViewM.Rows.Clear();
             if (list.Count > 0)
             {
@@ -85,10 +87,10 @@ namespace PatternKursProject.Forms
                 case "del":
                     {
 
-                        centreMonitor.setCommand(new CommandDelSystem(e.RowIndex));
+                        centreMonitor.setCommand(new CommandDelDev(ind, e.RowIndex));
                         centreMonitor.executeCommand();
 
-                        writeTable2();
+                        writeTable1();
 
                         break;
                     }

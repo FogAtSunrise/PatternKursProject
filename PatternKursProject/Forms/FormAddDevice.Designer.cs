@@ -46,7 +46,7 @@ namespace PatternKursProject.Forms
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 342);
+            this.panel1.Size = new System.Drawing.Size(285, 315);
             this.panel1.TabIndex = 5;
             // 
             // checkedListBox2
@@ -100,7 +100,7 @@ namespace PatternKursProject.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 372);
+            this.button1.Location = new System.Drawing.Point(202, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 33);
             this.button1.TabIndex = 6;

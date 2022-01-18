@@ -30,13 +30,13 @@ namespace PatternKursProject.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,16 @@ namespace PatternKursProject.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(298, 319);
             this.panel1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 28);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Создать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkedListBox2
             // 
@@ -118,6 +128,7 @@ namespace PatternKursProject.Forms
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(298, 24);
             this.comboBoxType.TabIndex = 0;
+            this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -128,16 +139,6 @@ namespace PatternKursProject.Forms
             this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Тип системы";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(167, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Создать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormAddAS
             // 

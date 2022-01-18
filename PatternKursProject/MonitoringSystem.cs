@@ -13,12 +13,18 @@ namespace PatternKursProject
 {
     public class MonitoringSystem
     {
-
+        /// <summary>
+        /// статуст системы мониторинга
+        /// </summary>
         private State state;
         public void setState(State s)
         { state = s; }
         public string getState()
         { return state.getName(); }
+        /// <summary>
+        /// изменения статуса (если условия совершены)
+        /// </summary>
+        /// <returns></returns>
         public State changeState()
         {
             state.make();
@@ -72,6 +78,10 @@ namespace PatternKursProject
           MessageBox.Show("Система №"+ countAS + " успешно создана");
           
         }
+        /// <summary>
+        /// удаление системы анализа
+        /// </summary>
+        /// <param name="t"></param>
         public void delAnalysisSystem(int t)
         {
             int h = listAnalysisSystem[t].getAccountNumber();

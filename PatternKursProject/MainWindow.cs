@@ -161,7 +161,7 @@ namespace PatternKursProject
             if(centreMonitoring.listAnalysisSystem.Count==0)
                 MessageBox.Show("К сожалению нет систем анализа, куда можно было бы добавить устройство. Добавте сначала систему анализа. ");
             else
-            OpenChildForm(new Forms.FormAddDevice(centreMonitoring, -1), sender);
+            OpenChildForm(new Forms.FormAddDevice(centreMonitoring, -1, this), sender);
         }
 
         private void button5_Click(object sender, EventArgs e)

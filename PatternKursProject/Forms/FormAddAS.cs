@@ -73,6 +73,25 @@ namespace PatternKursProject.Forms
             }
             form.button1_Click(sender, e);
         }
+
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxType.Text)
+            {
+                case "AIR":
+                    checkedListBox1.SetItemChecked(0, true);
+                    checkedListBox2.SetItemChecked(0, true);
+                    break;
+                case "WATER":
+                    checkedListBox1.SetItemChecked(4, true);
+                    checkedListBox2.SetItemChecked(1, true);
+                    break;
+                case "SOIL":
+                    checkedListBox2.SetItemChecked(2, true);
+                    break;
+                default: MessageBox.Show("Не указан тип системы"); return;
+            }
+        }
     }
 }
 

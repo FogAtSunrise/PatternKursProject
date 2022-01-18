@@ -17,13 +17,15 @@ namespace PatternKursProject.Forms
     {
         private MonitoringSystem centreMonitor;
         private int numb;
-        public FormAddDevice(MonitoringSystem c, int num)
+        MainWindow form;
+        public FormAddDevice(MonitoringSystem c, int num, MainWindow f)
         {
             InitializeComponent();
             centreMonitor = c;
+            form = f;
            
             foreach(var elem in centreMonitor.listAnalysisSystem)
-            checkedListBox1.Items.Add("System №"+elem.getAccountNumber());
+            checkedListBox1.Items.Add("Система №"+elem.getAccountNumber());
 
             if (num > 0)
             { checkedListBox1.SetItemChecked(num, true);
