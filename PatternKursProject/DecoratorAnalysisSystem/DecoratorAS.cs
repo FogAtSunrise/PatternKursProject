@@ -12,7 +12,7 @@ namespace PatternKursProject.DecoratorAnalysisSystem
         /// <summary>
         /// конкретная система 
         /// </summary>
-        private AnalysisSystemMethod thisSystem;
+        protected AnalysisSystemMethod thisSystem;
         public DecoratorAS(AnalysisSystemMethod t)
         { thisSystem = t; }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.TeamFoundation.WorkItemTracking.Client.Wiql;
+using PatternKursProject.DecoratorAnalysisSystem;
 using PatternKursProject.devices;
 using System;
 using System.Collections.Generic;
@@ -115,6 +116,11 @@ namespace PatternKursProject
         private void button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormAddAS(centreMonitoring), sender);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            centreMonitoring.getMeasurement();
         }
     }
 }

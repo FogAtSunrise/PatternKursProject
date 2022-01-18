@@ -1,4 +1,5 @@
-﻿using PatternKursProject.devices;
+﻿using PatternKursProject.DecoratorAnalysisSystem;
+using PatternKursProject.devices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,8 @@ namespace PatternKursProject
         public AnalysisSystem(int number, SourceType type)
         {
             listDevices = new List<MeasuringDevice>();
-            accountNumber = number;
+            Random rnd = new Random();
+        accountNumber = number+ rnd.Next(number);
             typeOfSystem = type;
         }
         /// <summary>
@@ -74,7 +76,7 @@ namespace PatternKursProject
             { foreach (var device in listDevices)
                     foreach (var read in device.getMeasurement())
                     listLastMeasur.Add(read);
-
+          
             }
             return listLastMeasur;
         }

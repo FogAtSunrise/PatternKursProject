@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PatternKursProject.DecoratorAnalysisSystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,15 @@ namespace PatternKursProject
         { listAnalysisSystem.Add(t);
           MessageBox.Show("Система №"+ countAS + " успешно создана");
           
+        }
+        public void getMeasurement()
+        {
+            foreach (var syst in listAnalysisSystem)
+            {
+                syst.getMeasurements();
+                AnalysisSystemWithReport f = new AnalysisSystemWithReport(syst);
+                f.writeInReport();
+            }
         }
     }
 }

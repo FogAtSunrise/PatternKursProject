@@ -255,8 +255,11 @@
   <ItemGroup>
     <Compile Include="AnalysisSystem.cs" />
     <Compile Include="AnalysisSystemMethod.cs" />
+    <Compile Include="commandPatt\Command.cs" />
+    <Compile Include="commandPatt\CommandAddSystem.cs" />
     <Compile Include="DecoratorAnalysisSystem\AnalysisSystemWithReport.cs" />
     <Compile Include="DecoratorAnalysisSystem\DecoratorAS.cs" />
+    <Compile Include="DecoratorAnalysisSystem\exelHelper.cs" />
     <Compile Include="devices\Anemometer.cs" />
     <Compile Include="devices\Barometer.cs" />
     <Compile Include="devices\Diffmanometer.cs" />

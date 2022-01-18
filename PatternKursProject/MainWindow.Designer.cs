@@ -44,6 +44,7 @@ namespace PatternKursProject
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.open = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,6 +55,7 @@ namespace PatternKursProject
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.buttonAddAS);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -218,6 +220,16 @@ namespace PatternKursProject
             this.open.Text = "Открыть";
             this.open.ToolTipText = "Открыть";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(55, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 43);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -257,6 +269,7 @@ namespace PatternKursProject
         private System.Windows.Forms.DataGridViewButtonColumn open;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }
 
