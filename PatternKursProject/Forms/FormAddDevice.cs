@@ -81,8 +81,8 @@ namespace PatternKursProject.Forms
 
             centreMonitor.setCommand(new CommandAddDevice(list, numb));
             centreMonitor.executeCommand();
-            // newSys.addDevice
-
+      
+            form.button1_Click(sender, e);
         }
     }
 }

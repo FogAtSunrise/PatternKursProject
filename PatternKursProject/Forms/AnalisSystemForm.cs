@@ -33,7 +33,7 @@ namespace PatternKursProject.Forms
         private void writeTable1()
         {
             dataGridView1.Rows.Clear();
-            List<MeasuringDevice> list = centreMonitor.listAnalysisSystem[ind].getLastDev();
+            List<MeasuringDevice> list = centreMonitor.listAnalysisSystem[ind].getListDev();
             if (list.Count > 0)
             {
                 int count = list.Count;
