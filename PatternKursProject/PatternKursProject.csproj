@@ -270,6 +270,8 @@
     <Compile Include="devices\Psychrometer.cs" />
     <Compile Include="devices\testEnvironment.cs" />
     <Compile Include="devices\Thermometer.cs" />
+    <Compile Include="Flyweight\FlyweightData.cs" />
+    <Compile Include="Flyweight\FlyweightFactory.cs" />
     <Compile Include="Forms\AnalisSystemForm.cs">
       <SubType>Form</SubType>
     </Compile>

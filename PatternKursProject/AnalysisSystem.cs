@@ -1,5 +1,6 @@
 ﻿using PatternKursProject.DecoratorAnalysisSystem;
 using PatternKursProject.devices;
+using PatternKursProject.Flyweight;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,9 @@ namespace PatternKursProject
         /// <summary>
         /// тип источника выбросов
         /// </summary>
-        private SourceType typeOfSystem;
-        public SourceType getTypeOfSystem() { return typeOfSystem; }
+        //  private SourceType typeOfSystem;
+        private FlyweightData typeOfSystem;
+        public SourceType getTypeOfSystem() { return typeOfSystem.getTypeOfSystem(); }
 
         /// <summary>
         /// конструктор
@@ -44,7 +46,7 @@ namespace PatternKursProject
             listDevices = new List<MeasuringDevice>();
             Random rnd = new Random();
         accountNumber = number+ rnd.Next(number);
-            typeOfSystem = type;
+            typeOfSystem = FlyweightFactory.createFlyweight(type);
         }
         /// <summary>
         /// список измерительных устройств, установленных на наблюдаемом этой системой источнике

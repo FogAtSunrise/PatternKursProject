@@ -33,17 +33,7 @@ namespace PatternKursProject.Forms
             }
         }
       
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Если отмечено больше 2 элементов, то снимаем выделение со всех и отмечаем текущий.
-            if (checkedListBox1.CheckedItems.Count > 1)
-            {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
-                    checkedListBox1.SetItemChecked(i, false);
-                checkedListBox1.SetItemChecked(checkedListBox1.SelectedIndex, true);
-                numb = checkedListBox1.SelectedIndex;
-            }
-        }
+ 
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -83,6 +73,18 @@ namespace PatternKursProject.Forms
             centreMonitor.executeCommand();
       
             form.button1_Click(sender, e);
+        }
+
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //Если отмечено больше 2 элементов, то снимаем выделение со всех и отмечаем текущий.
+            if (checkedListBox1.CheckedItems.Count > 1)
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                    checkedListBox1.SetItemChecked(i, false);
+                checkedListBox1.SetItemChecked(checkedListBox1.SelectedIndex, true);
+                numb = checkedListBox1.SelectedIndex;
+            }
         }
     }
 }
