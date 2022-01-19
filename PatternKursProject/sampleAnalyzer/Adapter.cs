@@ -38,5 +38,9 @@ namespace PatternKursProject.sampleAnalyzer
             adaptable.prepareSample();
             return adaptable.analyzeSample();
         }
+
+        public double getDev(double n)
+        { return Math.Abs(getNorma() - n); }
+        
     }
 }

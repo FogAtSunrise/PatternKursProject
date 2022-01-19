@@ -14,5 +14,6 @@ namespace PatternKursProject.devices
         string getName();
         double getNorma();
         List<Measurement> getMeasurement();
+       double getDev(double n);
     }
 }

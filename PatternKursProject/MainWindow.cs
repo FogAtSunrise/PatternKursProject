@@ -24,7 +24,6 @@ namespace PatternKursProject
         /// система мониторинга
         /// </summary>
         private MonitoringSystem centreMonitoring;
-
         private Button currentButton;
         private Form activeForm;
         public MainWindow()
@@ -44,7 +43,10 @@ namespace PatternKursProject
             textBox2.Text = centreMonitoring.getState();
 
         }
-
+        /// <summary>
+        /// следим за кнопками, которые открывают новые вкладки
+        /// </summary>
+        /// <param name="btnSender"></param>
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -78,7 +80,11 @@ namespace PatternKursProject
             }
         }
 
-        
+        /// <summary>
+        /// открываю вкладки
+        /// </summary>
+        /// <param name="childForm"></param>
+        /// <param name="btnSender"></param>
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
@@ -94,12 +100,20 @@ namespace PatternKursProject
             childForm.Show();
             label1.Text = childForm.Text;
         }
-
+        /// <summary>
+        /// по нажатию открываю вкладку добавления
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddAS_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormAddAS(centreMonitoring, this), sender);
         }
-
+        /// <summary>
+        /// закрываю внешние вкладки, возврат на главную
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
@@ -117,7 +131,11 @@ namespace PatternKursProject
         }
 
     
-
+        /// <summary>
+        /// нажали на кнопку в таблице
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewSA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             switch (dataGridViewSA.Columns[e.ColumnIndex].Name)
@@ -141,21 +159,18 @@ namespace PatternKursProject
                         centreMonitoring.changeState();
                         textBox2.Text = centreMonitoring.getState();
                         writeTable();
-                        //OpenChildForm(new Forms.AnalisSystemForm(centreMonitoring, e.RowIndex), new Button());
-                        //  MessageBox.Show("Данные будут удалены безвозвратно. Вы уверены?", "Выбрана строка № " + e.RowIndex, MessageBoxButtons.OKCancel);
+                        
                         break;
                     }
 
             }
         }
 
-     
-        private void button2_Click(object sender, EventArgs e)
-        {
-            (new System.Threading.Thread(delegate () { centreMonitoring.getMeasurement();})).Start();
-            OpenChildForm(new Forms.AnalisSystemForm(centreMonitoring, 0), new Button());
-        }
-
+  /// <summary>
+  /// открываю вкладку добавления устройств
+  /// </summary>
+  /// <param name="sender"></param>
+  /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             if(centreMonitoring.listAnalysisSystem.Count==0)
@@ -164,12 +179,11 @@ namespace PatternKursProject
             OpenChildForm(new Forms.FormAddDevice(centreMonitoring, -1, this), sender);
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            button4_Click(sender, e);
-        }
-
-
+        /// <summary>
+        /// открываю папку с отчетами
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             try
@@ -188,7 +202,11 @@ namespace PatternKursProject
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
         }
-
+        /// <summary>
+        /// запускаю мониторинг
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             //  changeState();
@@ -215,7 +233,11 @@ namespace PatternKursProject
 
             textBox2.Text = centreMonitoring.getState();
         }
-
+        /// <summary>
+        /// ограничиваю содержимое текстбокса цифрами
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
  char number = e.KeyChar;
@@ -231,7 +253,11 @@ namespace PatternKursProject
                 }
             }
         }
-
+        /// <summary>
+        /// мониторинг по таймеру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             (new System.Threading.Thread(delegate () { 

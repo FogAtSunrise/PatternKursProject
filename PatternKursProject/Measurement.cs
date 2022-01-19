@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PatternKursProject
 {/// <summary>
-/// класс измерения,хранит название измерения, значение и единицу измерения
+/// класс измерения,хранит название измерения, значение и единицу измерения + отклонение от нормы
 /// </summary>
    public class Measurement
     {

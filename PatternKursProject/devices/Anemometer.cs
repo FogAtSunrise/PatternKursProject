@@ -39,7 +39,7 @@ namespace PatternKursProject.devices
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        private double getDev(double n)
+        public double getDev(double n)
         { return Math.Abs(norma - n); }
         /// <summary>
         /// получить измерение
