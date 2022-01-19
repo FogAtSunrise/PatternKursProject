@@ -263,7 +263,7 @@ namespace PatternKursProject
             (new System.Threading.Thread(delegate () { 
                 centreMonitoring.getMeasurement(); 
             })).Start();
-            MessageBox.Show("DONE");
+
         }
     
     }

@@ -48,7 +48,7 @@ namespace PatternKursProject
         /// </summary>
         private MonitoringSystem() { 
             listAnalysisSystem = new List<AnalysisSystemMethod>();
-            countAS = 0;
+            countAS = 1;
             state = new OffState();
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace PatternKursProject
         /// </summary>
         private int countAS;
         public int getCountAS() {
-            countAS++;
+           
             return countAS; }
         /// <summary>
         /// публичный конструткор
@@ -76,7 +76,9 @@ namespace PatternKursProject
         public void addAnalysisSystem(AnalysisSystemMethod t)
         { listAnalysisSystem.Add(t);
           MessageBox.Show("Система №"+ countAS + " успешно создана");
-          
+            countAS += 1;
+
+
         }
         /// <summary>
         /// удаление системы анализа
