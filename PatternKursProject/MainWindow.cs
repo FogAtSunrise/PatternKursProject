@@ -209,7 +209,7 @@ namespace PatternKursProject
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-            //  changeState();
+           
             if (button6.Text == "Запустить мониторинг")
             {
                 button6.Text = "Остановить мониторинг";
@@ -217,7 +217,7 @@ namespace PatternKursProject
                 int time = 20;
                 if (textBox1.Text != "")
                     time = Convert.ToInt32(textBox1.Text);
-                timer1.Interval = 10000*time;//////////////////////////////////////////////////////
+                timer1.Interval = 60000*time;
                 State s = centreMonitoring.changeState();
                 if (s.getName() == "Работает")
                     timer1.Start();
